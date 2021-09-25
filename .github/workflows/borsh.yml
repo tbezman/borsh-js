@@ -1,6 +1,24 @@
 name: Borsh Tests
 on: [push]
 jobs:
+    typecheck:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '14'
+            - run: yarn install
+            - run: yarn typecheck
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '14'
+            - run: yarn install
+            - run: yarn lint
     unit-tests:
         runs-on: ubuntu-latest
         steps:
