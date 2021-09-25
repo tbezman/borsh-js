@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "typecheck": "yarn tsc --noEmit",
     "build": "tsc -p ./tsconfig.json",
     "test": "jest test --runInBand",
     "fuzz": "jsfuzz borsh-ts/test/fuzz/borsh-roundtrip.js borsh-ts/test/fuzz/corpus/",
